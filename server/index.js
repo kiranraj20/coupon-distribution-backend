@@ -6,6 +6,7 @@ import couponRoutes from './routes/coupon.js';
 import authRoutes from './routes/auth.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import corsMiddleware from './middleware/cors.js';
 
 
 const app = express();
@@ -14,10 +15,7 @@ app.use(json());
 app.use(cookieParser());
 dotenv.config();
 
-app.use(cors({
-    origin: 'http://localhost:3000',
-    credentials: true,
-  }));
+app.use(corsMiddleware);
 
 mongoose
   .connect(process.env.MONGO_URI, {

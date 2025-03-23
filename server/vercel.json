@@ -9,5 +9,54 @@
   "env": {
     "MONGO_URI": "@mongo_uri",
     "JWT_SECRET": "@jwt_secret"
-  }
+  },
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/admin/login",
+      "dest": "index.js"
+    },
+    {
+      "src": "/api/admin/refresh",
+      "dest": "index.js"
+    },
+    {
+      "src": "/api/admin/logout",
+      "dest": "index.js"
+    },
+    {
+      "src": "/api/claim/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/api/claims/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/api/coupons/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/api/coupons/:id/(.*)",
+      "dest": "index.js"
+    },
+
+    {
+      "src": "/(.*)",
+      "dest": "index.js",
+      "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://skblossom.vercel.app, http://localhost:3000",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      }
+    }
+  ]
 }
