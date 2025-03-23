@@ -1,0 +1,52 @@
+# Root-level ignores
+*.log
+*.log.*
+
+# Environment variables
+.env
+
+# Node.js ignores (for both server and client)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build outputs
+/dist
+/build
+
+# Dependency lock files (optional, include if you want reproducible builds)
+/package-lock.json
+/yarn.lock
+
+# Backend-specific (server/)
+server/*.log
+server/dist
+
+# Frontend-specific (client/)
+client/build
+client/*.log
+client/dist
+
+# Editor-specific
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Testing and coverage
+coverage/
+*.lcov
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Production deployment files (if applicable)
+.vercel
+*.heroku
