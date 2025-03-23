@@ -14,7 +14,7 @@ const app = express();
 app.use(json());
 app.use(cookieParser());
 dotenv.config();
-
+   
 app.use(corsMiddleware);
 
 mongoose

@@ -1,15 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "api/**/*": {
-      "runtime": "nodejs18.x",
-      "memory": 1024
-    }
-  },
-  "env": {
-    "MONGO_URI": "@mongo_uri",
-    "JWT_SECRET": "@jwt_secret"
-  },
   "builds": [
     {
       "src": "index.js",
